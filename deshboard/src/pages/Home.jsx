@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import Button from '@mui/material/Button';
+import { GoDotFill } from "react-icons/go";
 import { MdDashboard, MdMessage,MdNotificationsActive   } from "react-icons/md";
 import { FaAngleRight, FaCartArrowDown, FaProductHunt, FaUser } from "react-icons/fa";
 import { FiSettings, FiUser } from "react-icons/fi";
@@ -7,6 +8,7 @@ import { FiSettings, FiUser } from "react-icons/fi";
 import Products from "../components/products/Products.jsx"
 function Home() {
   const [selectedCategory, setSelectedCategory] = useState("dashboard");
+  const [selectedSubCategory, setSelectedSubCategory] = useState("productDetails");
   const [isProductsDropdownOpen, setIsProductsDropdownOpen] = useState(false);
 
   return (
@@ -19,6 +21,7 @@ function Home() {
         className={`dashboardBtn ${selectedCategory === "products" ? "active" : ""}`} 
         onClick={() => {
           setSelectedCategory("products");
+          setSelectedSubCategory("productDetails")
           setIsProductsDropdownOpen(!isProductsDropdownOpen);
         }} > 
         <FaProductHunt /> 
@@ -27,9 +30,15 @@ function Home() {
         </Button>
         {isProductsDropdownOpen && (
     <div className="dropdownMenu">
-      <Button onClick={() => setSelectedCategory("productDetails")}>Product Details</Button>
-      <Button onClick={() => setSelectedCategory("categories")}>Categories</Button>
-      <Button onClick={() => setSelectedCategory("createProduct")}>Create Product</Button>
+      <Button 
+      className={`dashboardBtn productDropdownBtn ${selectedSubCategory === "productDetails" ? "active" : ""}`} 
+      onClick={() => setSelectedSubCategory("productDetails")}><GoDotFill />Product Details</Button>
+      <Button 
+      className={`dashboardBtn productDropdownBtn ${selectedSubCategory === "categories" ? "active" : ""}`} 
+      onClick={() => setSelectedSubCategory("categories")}><GoDotFill />Categories</Button>
+      <Button
+        className={`dashboardBtn productDropdownBtn ${selectedSubCategory === "createProduct" ? "active" : ""}`} 
+        onClick={() => setSelectedSubCategory("createProduct")}><GoDotFill />Create Product</Button>
     </div>
   )}
 

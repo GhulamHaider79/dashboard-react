@@ -130,7 +130,7 @@ header {
     color: #0858f7 !important;
     transition: all 0.2s ease-in-out;
 } */
-.dashboardBtn::before {
+.dashboardBtn::before{
     content: "";
     width: 4px;
     height: 0;
@@ -147,16 +147,21 @@ header {
   }
   
   /* Now add hover effect */
-  .dashboardBtn:hover::before {
+  .dashboardBtn:hover::before{
     height: 70%; /* how tall you want the line */
     opacity: 1;
   }
-  .dashboardBtn.active::before {
+  .dashboardBtn.active::before{
   height: 70%;
   opacity: 1;
 }
 
-.dashboardBtn.active {
+.dashboardBtn.active{
     color: #0858f7 !important; /* text + SVG color */
     transition: all 0.2s ease-in-out;
+  }
+
+  /* dropdown btn style */
+  .productDropdownBtn{
+      margin-left: 10px !important;
   }
