@@ -2,10 +2,8 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Button from '@mui/material/Button';
 import { MdMenuOpen } from "react-icons/md";
-import { MdOutlineMenu } from "react-icons/md";
 import SearchBox from './SearchBox';
 import { CiLight } from "react-icons/ci";
-import { MdDarkMode } from "react-icons/md";
 import { MdLanguage } from "react-icons/md";
 import { BsCart3 } from "react-icons/bs";
 import { AiOutlineMail } from "react-icons/ai";
@@ -74,7 +72,7 @@ function Header() {
                                 className="myProfile d-flex align-items-center">
                                     <div className="userImage">
                                         <span className='rounded-circle'>
-                                            <img src="/380.png" alt="" />
+                                            <img src="/380.png" alt="User Photo" />
                                         </span>
                                     </div>
 
